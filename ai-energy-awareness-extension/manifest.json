@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "EcoQuery",
+  "version": "2.0",
+  "description": "Compare the environmental impact of ChatGPT vs Google Search - Make informed choices about your digital carbon footprint",
+  "icons": {
+    "16": "ecoquery.png",
+    "32": "ecoquery.png",
+    "48": "ecoquery.png",
+    "128": "ecoquery.png"
+  },
+  "permissions": [],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["ecoquery.png", "google-logo.png", "gpt-logo.png"],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
